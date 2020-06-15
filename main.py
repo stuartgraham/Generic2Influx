@@ -61,14 +61,11 @@ def sort_json(working_data):
     data_points = working_data [IN1]
     for k,v in data_points.items():
         fields_data.update({k : v[IN2]})
-    print(fields_data)
-    print('#'*30)
     base_dict.update({'fields' : fields_data})
     pprint(base_dict)
 
     # Construct payload and insert
-    data_payload = [base_dict]
-    print('#'*30)   
+    data_payload = [base_dict] 
     print("SUBMIT:" + str(data_payload))
     print('#'*30) 
     write_to_influx(data_payload)
